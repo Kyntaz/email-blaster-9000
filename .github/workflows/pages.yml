@@ -35,7 +35,7 @@ jobs:
         with:
           node-version: '16.x'
       - name: Build
-        run: npm run build:app
+        run: npm run build:app:ci
       - name: Setup Pages
         uses: actions/configure-pages@v2
       - name: Upload artifact
