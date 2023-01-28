@@ -1,0 +1,18 @@
+{
+  "name": "email-blaster-9000",
+  "version": "0.0.0",
+  "description": "THE EMAIL BLASTER 9000",
+  "scripts": {
+    "start:app": "cd email-blaster-9000-app & npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kyntaz/email-blaster-9000.git"
+  },
+  "author": "Pedro Quintas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kyntaz/email-blaster-9000/issues"
+  },
+  "homepage": "https://github.com/Kyntaz/email-blaster-9000#readme"
+}
