@@ -2,8 +2,8 @@ import { Services } from "../Services";
 
 export function SendEmails() {
     return (
-        <button onClick={() => {
+        <button className="btn btn-success m-1" onClick={() => {
             Services.EmailSender.startSending();
-        }}>Send Emails</button>
+        }}>✉️ Send Emails</button>
     );
 }

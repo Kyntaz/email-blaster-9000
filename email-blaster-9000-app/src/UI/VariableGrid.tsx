@@ -4,13 +4,18 @@ import { Services } from "../Services";
 function GridEntry({ index, variables }: { index: number; variables: string[] }) {
     const cols = variables.map((variable, i) => (
         <td key={i}>
-            <input onChange={(event) => {
+            <input className="form-control" onChange={(event) => {
                 Services.TemplateVariableManager.setValue(index, variable, event.target.value);
             }} />
         </td>
     ));
 
-    return <>{cols}</>;
+    return (
+        <>
+            <th>{index + 1}</th>
+            {cols}
+        </>
+    );
 }
 
 export function VariableGrid() {
@@ -33,9 +38,12 @@ export function VariableGrid() {
     ></GridEntry></tr>);
 
     return (
-        <table>
+        <table className="table">
             <thead>
-                <tr>{headers}</tr>
+                <tr>
+                    <th>#</th>
+                    {headers}
+                </tr>
             </thead>
             <tbody>
                 {entryElements}

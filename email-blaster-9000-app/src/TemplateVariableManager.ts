@@ -1,7 +1,7 @@
 import { Services } from "./Services";
 
 export class TemplateVariableManager {
-    #nEntries = 0;
+    #nEntries = 1;
     #entries = new Map<string, string>();
 
     evaluate(index: number, name: string): string {
