@@ -1,14 +1,33 @@
 import { useState } from "react";
 import { Services } from "../Services";
 
-function GridEntry({ index, variables }: { index: number; variables: string[] }) {
-    const cols = variables.map((variable, i) => (
-        <td key={i}>
-            <input className="form-control" onChange={(event) => {
+function GridCell({ index, variable }: { index: number; variable: string }) {
+    const [value, setValue] = useState(Services.TemplateVariableManager.evaluate(index, variable));
+
+    Services.EventHandler.handle(`GridCell.${index}.${variable}`, "VariableValueUpdated", (body) => {
+        if (body.index === index && body.variable === variable) {
+            setValue(body.value);
+        }
+    });
+
+    return (
+        <td>
+            <input className="form-control" value={value} onChange={(event) => {
+                setValue(event.target.value);
                 Services.TemplateVariableManager.setValue(index, variable, event.target.value);
             }} />
         </td>
-    ));
+    );
+}
+
+function GridEntry({ index, variables }: { index: number; variables: string[] }) {
+
+
+    const cols = variables.map((variable, i) => <GridCell
+        index={index}
+        variable={variable}
+        key={i}
+    />);
 
     return (
         <>

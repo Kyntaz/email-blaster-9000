@@ -10,10 +10,16 @@ export class TemplateVariableManager {
 
     setValue(index: number, name: string, value: string): void {
         this.#entries.set(this.#buildId(index, name), value);
+        Services.EventHandler.trigger("VariableValueUpdated", { variable: name, index, value });
     }
 
     addEntry(): void {
         this.#nEntries++;
+        Services.EventHandler.trigger("EntriesUpdated", { nEntries: this.#nEntries });
+    }
+
+    setNEntries(nEntries: number): void {
+        this.#nEntries = nEntries;
         Services.EventHandler.trigger("EntriesUpdated", { nEntries: this.#nEntries });
     }
 

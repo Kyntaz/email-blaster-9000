@@ -1,6 +1,7 @@
 type EventBodyMap = {
     VariablesUpdated: { variables: string[] };
     EntriesUpdated: { nEntries: number };
+    VariableValueUpdated: { variable: string; index: number; value: string };
 }
 
 type Events = keyof EventBodyMap;
