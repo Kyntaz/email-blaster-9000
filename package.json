@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "description": "THE EMAIL BLASTER 9000",
   "scripts": {
-    "start:app": "cd email-blaster-9000-app & npm run dev",
-    "build:app": "cd email-blaster-9000-app & npm run build",
-    "build:app:ci": "cd email-blaster-9000-app & npm ci & npm run build"
+    "start:app": "cd email-blaster-9000-app && npm run dev",
+    "build:app": "cd email-blaster-9000-app && npm run build",
+    "build:app:ci": "cd email-blaster-9000-app && npm ci && npm run build"
   },
   "repository": {
     "type": "git",
