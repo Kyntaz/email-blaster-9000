@@ -2,7 +2,7 @@ import { AddEntry } from "./AddEntry";
 import { LoadExcelFile } from "./LoadExcelFile";
 import { SendEmails } from "./SendEmails";
 import { Subject } from "./Subject";
-import { Template } from "./Template";
+import { TemplateTabs } from "./TemplateTabs";
 import { VariableGrid } from "./VariableGrid";
 
 export function App() {
@@ -12,15 +12,19 @@ export function App() {
 
             <h4 className="mt-5">Email Template</h4>
             <Subject />
-            <Template />
-            <p className="fw-light">Declare variables in your email template using <span className="text-primary fw-bold">{"${variable}"}</span>.</p>
+            <TemplateTabs />
+            <p className="fw-light">
+                Declare variables in your email template using
+                <span className="text-primary fw-bold"> {"${variable}"}</span>
+                .
+            </p>
 
             <h4 className="mt-5">Variables</h4>
             <VariableGrid />
 
+            <LoadExcelFile />
             <AddEntry />
             <SendEmails />
-            <LoadExcelFile />
         </div>
     );
 }

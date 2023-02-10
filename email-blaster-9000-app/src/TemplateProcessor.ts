@@ -1,9 +1,14 @@
 import { Services } from "./Services";
 
 export class TemplateProcessor {
+    isHTML = false;
     #variableRegex = /\$\{(?<name>\w+)\}/g
     #template = "";
     #subject = "";
+
+    get template(): string {
+        return this.#template;
+    }
 
     setTemplate(template: string): void {
         this.#template = template;
