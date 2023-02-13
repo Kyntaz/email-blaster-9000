@@ -1,0 +1,18 @@
+{
+  "name": "email-blaster-9000-automation",
+  "version": "0.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "batch-send": "ts-node --esm src/autos/BatchSend.ts"
+  },
+  "author": "Pedro Quintas",
+  "license": "ISC",
+  "devDependencies": {
+    "playwright": "^1.30.0",
+    "ts-node": "^10.9.1"
+  },
+  "dependencies": {
+    "zx": "^7.1.1"
+  }
+}

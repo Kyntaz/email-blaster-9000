@@ -4,7 +4,9 @@ function renderEmailLink(email: string, subject: string, body: string) {
     const encodedSubject = encodeURIComponent(subject);
     const encodedBody = encodeURIComponent(body);
 
-    return `mailto:${email}?subject=${encodedSubject}&body=${encodedBody}`;
+    const mailto = `mailto:${email}?subject=${encodedSubject}&body=${encodedBody}`;
+
+    return `https://mail.google.com/mail/u/0/?extsrc=mailto&url=${encodeURIComponent(mailto)}&view`;
 }
 
 function openWindow(url?: string): Window | null {
